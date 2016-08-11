@@ -83,11 +83,13 @@ public class Url extends FacebookType {
 
   @JsonMappingCompleted
   void fillCounts() {
-    if (share.has("comment_count")) {
-      commentCount = share.getInt("comment_count");
-    }
-    if (share.has("share_count")) {
-      shareCount = share.getInt("share_count");
+    if(this.share != null){
+      if (share.has("comment_count")) {
+        commentCount = share.getInt("comment_count");
+      }
+      if (share.has("share_count")) {
+        shareCount = share.getInt("share_count");
+      }
     }
   }
 
